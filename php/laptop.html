@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+      <!-- Include meta elements here!  -->
+	   <meta charset="utf-8" />
+    <meta name="author" content="Abdulrahman" />
+  <link rel="stylesheet" href="laptops.css">
+
+          <title>Product</title>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<style> 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+
+    </head>
+    
+    
+       <body>
+ <div class="navbar">
+  <a href="../php/index.php">Home</a>
+  <a href="../php/about.php">About</a>
+  <div class="dropdown">
+    <button class="dropbtn">More About Wibsit
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../php/login.php">Login</a>
+      <a href="../php/register.php">Register</a>
+      <a href="../php/contact.php">Contact as</a>
+    </div>
+  </div> 
+</div>
+
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">
+    <div class="gallery">
+      <figure class="gallery-item">
+       <img class="thumbnail" src="../assets/img/acer.jpg" width="250" height="350" alt="p1">
+      </figure>
+      <figure class="gallery-item">
+      <img class="thumbnail" src="../assets/img/apple-laptop.png" width="250" height="350" alt="p2">
+      </figure>
+      <figure class="gallery-item">
+      <img class="thumbnail" src="../assets/img/hp.jpg" width="250" height="350" alt="p3">
+      </figure>
+      <figure class="gallery-item">
+     <img class="thumbnail" src="../assets/img/sam.jpg" width="250" height="350" alt="p4">
+      </figure>
+          </div>
+          </div>
+        
+          
+  
+   <footer class="footer">
+  <p>Developed by Abdulrahman Hejazi &copy;</p>
+</footer>
+ </body>
+</html>
+

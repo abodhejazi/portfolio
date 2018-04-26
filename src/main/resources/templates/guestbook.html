@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>abod Guestbook</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css1/main.css}" />
+</head>
+<body>
+<img th:src="@{/css1/images/index.jpeg}" />
+<h1>Laptops list</h1>
+
+
+<div th:if="${entries.isEmpty()}">
+    <p>Laptops list cannot be empty </p>
+</div>
+
+<div th:if="${!entries.isEmpty()}">
+    <table>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <tr th:each="entry: ${entries}">
+            <td th:text="${entry.user}"></td>
+            <td th:text="${entry.comment}"></td>
+            <td><a th:href="@{'/delete/' + ${entry.id}}">Delete</a></td>
+            <td><a th:href="@{'/update/' + ${entry.id}}">Update</a></td>
+        </tr>
+    </table>
+</div>
+
+<h2 th:text="${formHeader}"></h2>
+<form th:object="${newEntry}" method="post">
+    <label>Laptop Name </label>
+    <input type="text" size="32" th:field="*{user}" />
+<br/>
+    <label>Laptop Brand: </label>
+    <input  class="brand" type="text" size="64" th:field="*{comment}" />
+    <input type="submit" value="Submit" />
+    <br/>
+    <br/>
+    <br/>
+    <p class="warning" th:if="${#fields.hasErrors('user')}">Laptop Name  cannot be empty.</p>
+    <p class="warning" th:if="${#fields.hasErrors('comment')}">Laptop Brand cannot be empty.</p>
+</form>
+</body>
+</html>
